@@ -1,0 +1,20 @@
+<div class="container">
+  <div id="ruby-text">
+    <h1> <%= @task.title %> </h1>
+    <%= link_to 'Editer la tache', edit_task_path(@task), class: 'btn btn-primary text-white' %>
+  </div>
+
+
+  <div class="card">
+    <%= @task.details %>
+  </div>
+
+  <div class="checkb">
+    <% checked = @task.completed ? "checked" : "" %>
+    <input type="checkbox" name="box" <%="#{checked}"%>>
+    <% sentence = @task.completed ? "This task is completed" : "This task is not complete yet" %>
+    <label for="box"><%="#{sentence}"%></label>
+  </div>
+  <hr />
+  <%= link_to "Retour aux listes", tasks_path %>
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>New task</h1>
+
+  <%= form_with model: @task, :html => {:class => 'col'} do |form| %>
+    <p><%= form.label :title, "Title", class:"row"%></p>
+    <%= form.text_field :title, class:"row"%>
+
+    <p><%= form.label :details, "Details", class:"row" %></p>
+    <%= form.text_field :details, class:"row" %>
+
+    <%= form.submit "Ajouter la tache", class: "btn btn-primary"%>
+  <% end %>
+
+  <hr />
+  <%= link_to "Retour aux listes", tasks_path %>
+</div>
